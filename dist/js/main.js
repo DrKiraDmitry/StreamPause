@@ -73,25 +73,28 @@ function mirror(){
     
     if(tumblerForMirror === 1 && delay === 100) {
         for (let i = 0; i < elementCount; i++) {
+            element.children[i].classList.add('MirrorBackSlide')
             element.children[i].classList.remove('MirrorSlide');
             element.children[i].classList.remove('Mirror')
-            element.children[i].classList.add('MirrorBackSlide')
         }
         delay=0;
         tumblerForMirror = 2;
         iteration = 0
     }
     if(tumblerForMirror === 2 && delay === 130) {
-        element.children[iteration].classList.add('MirrorRevers');
-        element.children[iteration].classList.remove('MirrorBackSlide');
-        iteration++;
+        for (let i = 0; i < elementCount; i++) {
+            element.children[i].classList.add('MirrorRevers');
+            element.children[i].classList.remove('MirrorBackSlide');
+        }
         if(iteration === elementCount){
             tumblerForMirror = 3;
             delay=0;
         };
     }
-    if(tumblerForMirror === 3 && delay === 130) {
-        switchStatus('MirrorRevers', tumblerForMirror)
+    if(tumblerForMirror === 3) {
+        for (let i = 0; i < elementCount; i++) {
+            element.children[i].classList.remove('MirrorRevers');
+        }
         if(iteration === 0){
             tumblerForMirror = 4;
             delay=0;
