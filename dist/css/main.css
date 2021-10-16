@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Roboto');
+body{
+    display:  flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    max-height: 100vh;
+    max-width: 100vw;
+}
+/**/
+.DeusEx{
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #f4ab42;
+    text-align: center;
+    padding: 50px 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.DeusEx svg{
+    padding: 50px 0;
+    /* height: 500px; */
+    width: 100%;
+}
+.DeusEx path{ 
+    transition: 3s;     
+}
+.DeusExx{
+    transform: translateX(-2500px);
+    /* transform: scale(3) translate(-500px); */
+    opacity: 0;
+}
+
+/*mirror*/
+
+.MirrorSlide{
+    animation: MirrorSlide 1s forwards;
+}
+
+@keyframes MirrorSlide {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-25vw);
+    }
+}
+
+.Mirror{
+    transform-origin: center;
+    animation: Mirror 3s forwards;
+}
+
+@keyframes Mirror {
+    0%{
+        transform: translateX(-25vw);
+    }
+    100%{
+        transform: translateX(25vw) rotateY(180deg);
+    }
+}
+
+.MirrorBackSlide{
+    transform-origin: center;
+    animation: MirrorBackSlide 1s forwards;
+}
+
+@keyframes MirrorBackSlide {
+    0%{
+        transform: translateX(25vw) rotateY(180deg);
+    }
+    100%{
+        transform: translateX(0) rotateY(180deg);
+    }
+}
+
+
+.MirrorRevers{
+    transform-origin: center;
+    animation: MirrorRevers 1s forwards;
+}
+
+@keyframes MirrorRevers {
+    0%{
+        transform: translateX(0) rotateY(180deg);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(0) rotateY(90deg);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0) rotateY(0);
+    }
+}

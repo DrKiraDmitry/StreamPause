@@ -1,0 +1,20 @@
+header{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    padding: 30px 50px;
+    position: absolute;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    color: #f4ab42;
+    align-items: center;
+}
+.logo{
+    font-size: 30px;
+}
+.menu a{
+    padding: 0px 10px;
+    text-decoration: none;
+    color: #f4ab42;   
+}
