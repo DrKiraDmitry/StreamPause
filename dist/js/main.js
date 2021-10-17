@@ -40,6 +40,7 @@ function deus() {
         if(tumblerForDeus === 2) {
             clearTimeout(timeout)
             timeout = setInterval(mirror, 100)
+            delay = 0
             tumblerForDeus = 0
             console.log(`stop timeoutDeus`)
             
@@ -86,23 +87,19 @@ function mirror(){
             element.children[i].classList.add('MirrorRevers');
             element.children[i].classList.remove('MirrorBackSlide');
         }
-        if(iteration === elementCount){
-            tumblerForMirror = 3;
-            delay=0;
-        };
+        tumblerForMirror = 3;
+        delay = 0
     }
-    if(tumblerForMirror === 3) {
+    if(tumblerForMirror === 3 && delay === 130) {
         for (let i = 0; i < elementCount; i++) {
             element.children[i].classList.remove('MirrorRevers');
         }
-        if(iteration === 0){
-            tumblerForMirror = 4;
-            delay=0;
-        };
+        tumblerForMirror = 4;
     }
     if(tumblerForMirror === 4) {
         clearTimeout(timeout)
         tumblerForMirror = 0
+        delay = 10
         timeout = setInterval(deus, 100)
         console.log(`stop Mirror`)
     }
