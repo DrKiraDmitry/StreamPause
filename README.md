@@ -1,2 +1,2 @@
 # Animation
-https://drkiradmitry.github.io/Animation/dist/
+https://drkiradmitry.github.io/StreamPause/dist/
